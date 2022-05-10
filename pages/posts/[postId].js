@@ -1,6 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 
 function PostDetail({ post }) {
+  const router = useRouter();
+
+  // - if post does not exist
+  if (router.isFallback) {
+    return <h1>Loading Post...</h1>;
+  }
+
   return (
     <>
       <div>PostDetail</div>
@@ -20,7 +28,7 @@ export const getStaticPaths = async () => {
   const paths = data.map((post) => ({ params: { postId: `${post.id}` } }));
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -34,6 +42,12 @@ export const getStaticProps = async (context) => {
     );
 
     data = await response.json();
+
+    if (!data.id) {
+      return {
+        notFound: true,
+      };
+    }
   } catch (err) {
     console.log(err);
   }

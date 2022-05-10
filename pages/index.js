@@ -28,6 +28,9 @@ function Home() {
       <Link href='/posts'>
         <a>Posts</a>
       </Link>
+      <Link href='/news'>
+        <a>News</a>
+      </Link>
       <button type='button' onClick={handleClick}>
         Place Order
       </button>

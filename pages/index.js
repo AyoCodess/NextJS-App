@@ -25,6 +25,9 @@ function Home() {
       <Link href='/users'>
         <a>Users</a>
       </Link>
+      <Link href='/posts'>
+        <a>Posts</a>
+      </Link>
       <button type='button' onClick={handleClick}>
         Place Order
       </button>

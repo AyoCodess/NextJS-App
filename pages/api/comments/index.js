@@ -2,6 +2,7 @@ import { comments } from '../../../data/comments';
 
 function handler(req, res) {
   if (req.method === 'GET') {
+    console.log('get api');
     res.status(200).json(comments);
   }
 

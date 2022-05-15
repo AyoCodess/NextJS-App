@@ -31,6 +31,10 @@ function Home() {
       <Link href='/news'>
         <a>News</a>
       </Link>
+      {/* //-about has no header, has its own layout */}
+      <Link href='/about'>
+        <a>About</a>
+      </Link>
       <button type='button' onClick={handleClick}>
         Place Order
       </button>

@@ -1,7 +1,17 @@
 import React from 'react';
+import Footer from './components/footer';
 
-function about() {
+function About() {
   return <h1>about</h1>;
 }
 
-export default about;
+export default About;
+
+About.getLayout = function PageLayout(page) {
+  return (
+    <>
+      {page}
+      <Footer />
+    </>
+  );
+};

@@ -32,7 +32,6 @@ export const getStaticProps = async (context) => {
     (comment) => comment.id === parseInt(commentId)
   );
 
-  console.log(commentId);
   return {
     props: {
       comment,

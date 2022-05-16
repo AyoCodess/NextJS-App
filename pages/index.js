@@ -1,43 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+
+import Head from 'next/head';
 
 function Home() {
-  const router = useRouter();
-
-  //- Navigate to another page on click. You can use router.replace to re-direct to the root directory.
-  const handleClick = () => {
-    console.log('placing order');
-    router.push('/product');
-  };
   return (
     <div>
+      {/* //- use head for every page, or once in _app.js if they dont have individual head tag in place or is missing cenrtain meta tags, it will pick it up from _app's head tag. */}
+      <Head>
+        <title>Main Product Nav Page</title>
+        <meta name='description' content='MAIN next page demo app' />
+      </Head>
       <h1>Home Page</h1>
-      <Link href='/blog'>
-        <a>Blog</a>
-      </Link>
-      <Link href='/product'>
-        <a>Products</a>
-      </Link>
-      <Link href='/product'>
-        <a>Products</a>
-      </Link>
-      <Link href='/users'>
-        <a>Users</a>
-      </Link>
-      <Link href='/posts'>
-        <a>Posts</a>
-      </Link>
-      <Link href='/news'>
-        <a>News</a>
-      </Link>
-      {/* //-about has no header, has its own layout */}
-      <Link href='/about'>
-        <a>About</a>
-      </Link>
-      <button type='button' onClick={handleClick}>
-        Place Order
-      </button>
     </div>
   );
 }

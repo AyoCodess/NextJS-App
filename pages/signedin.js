@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react';
 function SignedIn() {
   const { data: session, status } = useSession();
 
-  console.log(session);
+  console.log({ session });
 
   return (
     <>
